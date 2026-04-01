@@ -1,0 +1,90 @@
+.hero {
+  position: relative;
+  z-index: 1;
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: calc(20 / 375 * 100vw);
+
+  @media (--desktop) {
+    gap: calc(28 / 1440 * 100vw);
+  }
+}
+
+.title {
+  font-family: var(--font-mono);
+  font-size: calc(72 / 375 * 100vw);
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.3em;
+  line-height: 0.9;
+  color: var(--color-secondary);
+
+  @media (--desktop) {
+    font-size: calc(200 / 1440 * 100vw);
+    letter-spacing: 0.35em;
+  }
+}
+
+.subtitle {
+  font-family: var(--font-mono);
+  font-size: calc(10 / 375 * 100vw);
+  line-height: 1.6;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--color-secondary);
+  opacity: 0.4;
+
+  @media (--desktop) {
+    font-size: calc(12 / 1440 * 100vw);
+  }
+}
+
+.marqueeWrap {
+  position: absolute;
+  bottom: calc(40 / 375 * 100vw);
+  left: 0;
+  right: 0;
+  overflow: hidden;
+
+  @media (--desktop) {
+    bottom: calc(48 / 1440 * 100vw);
+  }
+}
+
+.marqueeItem {
+  font-family: var(--font-mono);
+  font-size: calc(9 / 375 * 100vw);
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--color-secondary);
+  opacity: 0.3;
+  white-space: nowrap;
+
+  @media (--desktop) {
+    font-size: calc(10 / 1440 * 100vw);
+  }
+}
+
+.marqueeSep {
+  font-family: var(--font-mono);
+  font-size: calc(9 / 375 * 100vw);
+  color: var(--color-secondary);
+  opacity: 0.15;
+  padding: 0 calc(12 / 375 * 100vw);
+
+  @media (--desktop) {
+    font-size: calc(10 / 1440 * 100vw);
+    padding: 0 calc(16 / 1440 * 100vw);
+  }
+}

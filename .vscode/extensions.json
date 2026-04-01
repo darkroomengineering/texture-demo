@@ -1,0 +1,11 @@
+{
+  "recommendations": [
+    "bradlc.vscode-tailwindcss",
+    "csstools.postcss",
+    "graphql.vscode-graphql-syntax",
+    "sanity-io.vscode-sanity",
+    "yoavbls.pretty-ts-errors",
+    "waderyan.gitblame",
+    "VoidZero.vite-plus-extension-pack"
+  ]
+}
