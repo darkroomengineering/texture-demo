@@ -256,7 +256,7 @@ export class InfiniteCanvasEngine {
   private onPtrMove = (e: PointerEvent) => {
     if (!this.dragging || e.pointerType === "touch") return;
     this.tvx -= (e.clientX - this.lastPx) * 0.3;
-    this.tvy -= (e.clientY - this.lastPy) * 0.3;
+    this.tvy += (e.clientY - this.lastPy) * 0.3;
     this.lastPx = e.clientX;
     this.lastPy = e.clientY;
   };
@@ -275,8 +275,8 @@ export class InfiniteCanvasEngine {
     const s = 8;
     if (e.key === "ArrowLeft" || e.key === "a") this.tvx -= s;
     else if (e.key === "ArrowRight" || e.key === "d") this.tvx += s;
-    else if (e.key === "ArrowUp" || e.key === "w") this.tvy -= s;
-    else if (e.key === "ArrowDown" || e.key === "s") this.tvy += s;
+    else if (e.key === "ArrowUp" || e.key === "w") this.tvy += s;
+    else if (e.key === "ArrowDown" || e.key === "s") this.tvy -= s;
     else if (e.key === "=" || e.key === "+") this.targetZoom = clamp(this.targetZoom * 1.1, MIN_ZOOM, MAX_ZOOM);
     else if (e.key === "-") this.targetZoom = clamp(this.targetZoom * 0.9, MIN_ZOOM, MAX_ZOOM);
   };
@@ -297,7 +297,7 @@ export class InfiniteCanvasEngine {
       const prev = this.touches.get(t.identifier);
       if (prev) {
         this.tvx -= (t.clientX - prev.x) * 0.4;
-        this.tvy -= (t.clientY - prev.y) * 0.4;
+        this.tvy += (t.clientY - prev.y) * 0.4;
         this.touches.set(t.identifier, { x: t.clientX, y: t.clientY });
       }
     } else if (this.touches.size >= 2 && e.touches.length >= 2) {
