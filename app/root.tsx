@@ -1,4 +1,12 @@
-import { Links, Meta, Outlet, Scripts, ScrollRestoration, isRouteErrorResponse, useRouteError } from "react-router";
+import {
+  Links,
+  Meta,
+  Outlet,
+  Scripts,
+  ScrollRestoration,
+  isRouteErrorResponse,
+  useRouteError,
+} from "react-router";
 
 export function Layout({ children }: { children: React.ReactNode }) {
   return (
@@ -53,9 +61,7 @@ export function ErrorBoundary() {
       <h1 style={{ fontSize: "4rem", margin: 0, lineHeight: 1 }}>{status}</h1>
       <p style={{ fontSize: "1.25rem", margin: 0, opacity: 0.7 }}>{title}</p>
       {message && typeof message === "string" && (
-        <p style={{ margin: 0, opacity: 0.5, maxWidth: "40ch", textAlign: "center" }}>
-          {message}
-        </p>
+        <p style={{ margin: 0, opacity: 0.5, maxWidth: "40ch", textAlign: "center" }}>{message}</p>
       )}
       {process.env.NODE_ENV === "development" && stack && (
         <pre

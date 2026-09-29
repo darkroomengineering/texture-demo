@@ -1,5 +1,12 @@
 import { Suspense, lazy, useState, type PropsWithChildren } from "react";
-import { Link, Links, Meta, Scripts, ScrollRestoration } from "react-router";
+import {
+  Link,
+  Links,
+  Meta,
+  Scripts,
+  ScrollRestoration,
+  type MiddlewareFunction,
+} from "react-router";
 import { Lenis } from "~/components/lenis";
 import { middleware as passwordMiddleware } from "~/lib/password-protection";
 import { ReactTempus } from "tempus/react";
@@ -15,9 +22,8 @@ import { Nav } from "./components/nav";
 import { TransitionDebug } from "./components/transition-debug";
 import { PersistentWebGL } from "./components/persistent-webgl";
 import { Preloader } from "./components/preloader";
-import type { Route } from "./+types/root";
 
-export const middleware: Route.MiddlewareFunction[] = [passwordMiddleware];
+export const middleware: MiddlewareFunction<Response>[] = [passwordMiddleware];
 
 const OrchestraTools = lazy(() => import("../dev"));
 const GlobalCanvas = lazy(() => import("../webgl/components/global-canvas"));

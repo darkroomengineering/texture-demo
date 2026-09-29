@@ -1,12 +1,11 @@
 import { useLayoutEffect } from "react";
 import { Wrapper } from "~/components/wrapper";
 import { PALETTES, useShaderStore } from "../store";
-import type { Route } from "./+types/home";
 import { Hero } from "./home/hero";
 import { Philosophy } from "./home/philosophy";
 import { StackSection } from "./home/stack-section";
 
-export function meta(_args: Route.MetaArgs) {
+export function meta() {
   return [
     { title: "Satus" },
     {

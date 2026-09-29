@@ -60,9 +60,7 @@ function getFromBundle(lang: string): Translation {
     const available = Object.keys(translationModules)
       .map((k) => k.replace("./translations/", "").replace(".json", ""))
       .join(", ");
-    throw new Error(
-      `Translation "${lang}" not found in bundle. Available: ${available}`,
-    );
+    throw new Error(`Translation "${lang}" not found in bundle. Available: ${available}`);
   }
 
   return v.parse(TranslationSchema, translation);

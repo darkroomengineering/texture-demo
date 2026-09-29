@@ -5,9 +5,8 @@ import { Wrapper } from "~/components/wrapper";
 import { useRouteTransition } from "~/lib/transitions";
 import { PALETTES, useShaderStore } from "../store";
 import s from "./features/features.module.css";
-import type { Route } from "./+types/features";
 
-export function meta(_args: Route.MetaArgs) {
+export function meta() {
   return [{ title: "Features — Satus" }, { name: "description", content: "What Satus gives you" }];
 }
 
