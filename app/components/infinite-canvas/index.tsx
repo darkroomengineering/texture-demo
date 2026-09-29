@@ -48,7 +48,9 @@ export default function InfiniteCanvas({
         WebkitUserSelect: "none",
       }}
     >
-      {mounted && <canvas ref={canvasRef} style={{ display: "block", width: "100%", height: "100%" }} />}
+      {mounted && (
+        <canvas ref={canvasRef} style={{ display: "block", width: "100%", height: "100%" }} />
+      )}
       <div
         style={{
           position: "absolute",

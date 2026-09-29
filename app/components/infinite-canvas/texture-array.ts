@@ -108,7 +108,14 @@ export class TextureArrayManager {
     gl.activeTexture(gl.TEXTURE0);
     gl.bindTexture(gl.TEXTURE_2D_ARRAY, this.texture);
 
-    gl.texStorage3D(gl.TEXTURE_2D_ARRAY, 1, gl.RGBA8, this.slotSize, this.slotSize, this.layerCount);
+    gl.texStorage3D(
+      gl.TEXTURE_2D_ARRAY,
+      1,
+      gl.RGBA8,
+      this.slotSize,
+      this.slotSize,
+      this.layerCount,
+    );
 
     gl.texParameteri(gl.TEXTURE_2D_ARRAY, gl.TEXTURE_MIN_FILTER, gl.LINEAR);
     gl.texParameteri(gl.TEXTURE_2D_ARRAY, gl.TEXTURE_MAG_FILTER, gl.LINEAR);

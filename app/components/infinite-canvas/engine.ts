@@ -189,7 +189,7 @@ export class InfiniteCanvasEngine {
       // Size: pick a base, then derive width/height from texture aspect ratio
       // Use a power distribution for more size variety (many small, few large)
       const t = r(1);
-      const base = BASE_MIN + (t * t) * (BASE_MAX - BASE_MIN);
+      const base = BASE_MIN + t * t * (BASE_MAX - BASE_MIN);
       let w: number;
       let h: number;
       if (aspect >= 1) {
@@ -277,7 +277,8 @@ export class InfiniteCanvasEngine {
     else if (e.key === "ArrowRight" || e.key === "d") this.tvx += s;
     else if (e.key === "ArrowUp" || e.key === "w") this.tvy += s;
     else if (e.key === "ArrowDown" || e.key === "s") this.tvy -= s;
-    else if (e.key === "=" || e.key === "+") this.targetZoom = clamp(this.targetZoom * 1.1, MIN_ZOOM, MAX_ZOOM);
+    else if (e.key === "=" || e.key === "+")
+      this.targetZoom = clamp(this.targetZoom * 1.1, MIN_ZOOM, MAX_ZOOM);
     else if (e.key === "-") this.targetZoom = clamp(this.targetZoom * 0.9, MIN_ZOOM, MAX_ZOOM);
   };
 
@@ -390,7 +391,8 @@ export class InfiniteCanvasEngine {
         const dx = cx + 0.5 - ccx;
         const dy = cy + 0.5 - ccy;
         const dist = Math.sqrt(dx * dx + dy * dy);
-        const fade = dist <= RENDER_DISTANCE ? 1 : Math.max(0, 1 - (dist - RENDER_DISTANCE) / FADE_MARGIN);
+        const fade =
+          dist <= RENDER_DISTANCE ? 1 : Math.max(0, 1 - (dist - RENDER_DISTANCE) / FADE_MARGIN);
         if (fade <= 0.001) continue;
 
         const chunk = this.getChunk(cx, cy);

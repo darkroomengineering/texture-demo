@@ -237,7 +237,14 @@ export class InstancedQuadRenderer {
     if (this.instanceBuf) gl.deleteBuffer(this.instanceBuf);
   }
 
-  private attrib(prog: WebGLProgram, name: string, size: number, stride: number, offset: number, divisor: number) {
+  private attrib(
+    prog: WebGLProgram,
+    name: string,
+    size: number,
+    stride: number,
+    offset: number,
+    divisor: number,
+  ) {
     const gl = this.gl;
     const loc = gl.getAttribLocation(prog, name);
     if (loc === -1) return;

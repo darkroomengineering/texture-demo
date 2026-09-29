@@ -1,8 +1,7 @@
 import { Link } from "react-router";
 import { Wrapper } from "~/components/wrapper";
-import type { Route } from "./+types/catchall";
 
-export function meta(_args: Route.MetaArgs) {
+export function meta() {
   return [{ title: "404 — Satus" }];
 }
 

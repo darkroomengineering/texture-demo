@@ -6,9 +6,8 @@ import { Wrapper } from "~/components/wrapper";
 import { useRouteTransition } from "~/lib/transitions";
 import { PALETTES, useShaderStore } from "../store";
 import s from "./about/about.module.css";
-import type { Route } from "./+types/about";
 
-export function meta(_args: Route.MetaArgs) {
+export function meta() {
   return [
     { title: "About — Satus" },
     { name: "description", content: "About Darkroom Engineering" },
